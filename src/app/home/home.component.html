@@ -1,0 +1,57 @@
+<div class="row">
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="https://bannerengineering-h.assetsadobe.com/is/image//content/dam/banner-engineering/3d-renders/product-group/multi_division/Banner-products-multi-division-home-hero-centered.jpg?wid=1200&hei=630&fit=crop&qlt=60&fmt=png"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://http2.mlstatic.com/D_NQ_861350-MLA77555102942_072024-OO.webp" class="d-block w-100"
+                    alt="...">
+            </div>
+            <div class="carousel-item active">
+                <img src="https://http2.mlstatic.com/D_NQ_653564-MLA77554782834_072024-OO.webp" class="d-block w-100"
+                    alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="grid">
+        <div class="card" *ngFor="let product of products">
+            <img
+              class="card-img-top img-responsive"
+              src="{{product.image}}"
+              alt="{{product.productName}}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{product.productName}}</h5>
+              <h3 class="card-text text-truncate">
+                <span class="enMoney">
+                    {{product.unitValue}}
+                </span>
+              </h3>
+              <a href="javascript:void(0)" class="btn btn-primary">Comprar</a>
+            </div>
+          </div>
+    </div>
+</div>

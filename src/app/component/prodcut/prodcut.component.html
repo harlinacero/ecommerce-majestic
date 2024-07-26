@@ -1,0 +1,98 @@
+<div class="container">
+    <h1>Nuevo Producto</h1>
+    <hr>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label for="productName" class="form-label">Nombre del Producto:</label>
+                <input id="productName" formControlName="productName" class="form-control"
+                    [ngClass]="{'is-invalid': productForm.get('productName')?.invalid && productForm.get('productName')?.touched}">
+                <div *ngIf="productForm.get('productName')?.invalid && productForm.get('productName')?.touched"
+                    class="invalid-feedback">
+                    Nombre del Producto es requerido.
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="image" class="form-label">Imagen:</label>
+                <input id="image" type="file" formControlName="image" class="form-control"
+                    [ngClass]="{'is-invalid': productForm.get('image')?.invalid && productForm.get('image')?.touched}">
+                <div *ngIf="productForm.get('image')?.invalid && productForm.get('image')?.touched"
+                    class="invalid-feedback">
+                    Imagen es requerida.
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6 mb-3">
+                <label for="unitValue" class="form-label">Precio de Venta:</label>
+                <input id="unitValue" type="number" formControlName="unitValue" class="form-control"
+                    [ngClass]="{'is-invalid': productForm.get('unitValue')?.invalid && productForm.get('unitValue')?.touched}">
+                <div *ngIf="productForm.get('unitValue')?.invalid && productForm.get('unitValue')?.touched"
+                    class="invalid-feedback">
+                    Precio de Venta es requerido y debe ser mayor o igual a 1 y menor a 100 millones.
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="discount" class="form-label">Descuento:</label>
+                <input id="discount" type="number" formControlName="discount" class="form-control"
+                    [ngClass]="{'is-invalid': productForm.get('discount')?.invalid && productForm.get('discount')?.touched}">
+                <div *ngIf="productForm.get('discount')?.invalid && productForm.get('discount')?.touched"
+                    class="invalid-feedback">
+                    Descuento debe ser entre 0 y 100.
+                </div>
+            </div>
+
+            <div class="col-12 mb-3">
+                <label for="description" class="form-label">Descripción:</label>
+                <textarea id="description" formControlName="description" class="form-control"></textarea>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="category" class="form-label">Categoría:</label>
+                <select id="category" formControlName="category" class="form-control">
+                    <option value="">Seleccione una categoría</option>
+                    <option value="electronics">Electrónica</option>
+                    <option value="clothing">Ropa</option>
+                    <option value="home">Hogar</option>
+                    <option value="books">Libros</option>
+                    <option value="toys">Juguetes</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="stock" class="form-label">Stock:</label>
+                <input id="stock" type="number" formControlName="stock" class="form-control"
+                    [ngClass]="{'is-invalid': productForm.get('stock')?.invalid && productForm.get('stock')?.touched}">
+                <div *ngIf="productForm.get('stock')?.invalid && productForm.get('stock')?.touched"
+                    class="invalid-feedback">
+                    Stock debe ser mayor o igual a 0.
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="supplier" class="form-label">Proveedor:</label>
+                <select id="supplier" formControlName="supplier" class="form-control">
+                    <option value="">Seleccione una proveedor</option>
+                    <option value="electronics">LG</option>
+                    <option value="clothing">Samgsung</option>
+                    <option value="home">ElectroLux</option>
+                    <option value="books">Haceb</option>
+                    <option value="toys">Imusa</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="tags" class="form-label">Etiquetas:</label>
+                <input id="tags" formControlName="tags" class="form-control">
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn d-block w-25 btn-success" [disabled]="productForm.invalid">Guardar</button>
+        </div>
+    </form>
+</div>
