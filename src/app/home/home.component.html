@@ -37,21 +37,8 @@
 
 <div class="row">
     <div class="grid">
-        <div class="card" *ngFor="let product of products">
-            <img
-              class="card-img-top img-responsive"
-              src="{{product.image}}"
-              alt="{{product.productName}}"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{product.productName}}</h5>
-              <h3 class="card-text text-truncate">
-                <span class="enMoney">
-                    {{product.unitValue}}
-                </span>
-              </h3>
-              <a href="javascript:void(0)" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
+        <app-card *ngFor="let product of products" [image]="product.image" [imagealt]="product.productName"
+            [title]="product.productName" [text]="product.unitValue.toString()" [btnConfirmText]="'Comprar'">
+        </app-card>
     </div>
 </div>

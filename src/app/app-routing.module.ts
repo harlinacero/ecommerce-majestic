@@ -1,8 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
-import { HomeComponent } from './home/home.component';
 
 export const Approutes: Routes = [
   {
@@ -11,8 +9,8 @@ export const Approutes: Routes = [
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       {
-        path: 'home', 
-        component: HomeComponent
+        path: 'home',
+        loadChildren: () => import('./home/home.component').then(m => m.HomeModule)
       },
       {
         path: 'dashboard',

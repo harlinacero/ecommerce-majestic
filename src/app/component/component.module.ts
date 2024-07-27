@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsRoutes } from './component.routing';
-import { VideoComponent } from './video/video.component';
 import { ProdcutComponent } from './prodcut/prodcut.component';
-import { CardComponent } from './card/card.component';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   imports: [
@@ -18,8 +17,8 @@ import { CardComponent } from './card/card.component';
     NgbModule,
     VideoComponent
   ],
-  declarations: [  
-    ProdcutComponent, CardComponent
+  declarations: [
+    ProdcutComponent
   ],
 })
 export class ComponentsModule { }
