@@ -1,11 +1,11 @@
 .card {
-    height: 300px;
+    height: 320px;
     cursor: pointer;
 
     .card-img-top {
-        height: 105px;
-        margin: 0 auto;
-        width: 105px;
+        height: 180px;
+        padding: .2em;
+        // width: 105px;
 
         img {
             display: block;
@@ -29,7 +29,7 @@
     }
 
     .card-footer {
-        margin: 16px;
+        background: #ffffff;
         .confirm {
             width: 100%;
         }
