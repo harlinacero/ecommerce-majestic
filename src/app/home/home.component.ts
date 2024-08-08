@@ -9,6 +9,7 @@ import { CardModule } from '../component/card/card.component';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product.model';
 import { BannerModule } from '../component/banner/banner.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
    *
    */
   constructor(private productService: ProductService) {
-    
+
   }
 
 
@@ -37,11 +38,8 @@ export class HomeComponent implements OnInit {
     this.status = 'loading';
     this.productService.getAll(this.limit, this.offset).subscribe({
       next: (products) => {
-        this.products = [...this.products, ...products.map(p => {
-          return {
-            ...p,
-            image: p.images.length > 0 ? JSON.parse(p.images[0]) : 'https://via.placeholder.com/150'
-        }})];
+        console.log(products);
+        this.products = [ ...this.products, ...products ];
         this.offset += this.limit;
         this.status = 'success';
       },
@@ -49,11 +47,13 @@ export class HomeComponent implements OnInit {
         setTimeout(() => {
           this.products = [];
           this.status = 'error';
-          console.error(error);          
+          console.error(error);
         }, 300);
       }
     });
   }
+
+
 }
 
 const routes: Routes = [
@@ -75,6 +75,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     NgApexchartsModule,
+    PipesModule
   ],
   declarations: [
     HomeComponent

@@ -1,4 +1,4 @@
-import { Product } from "../component/prodcut/Product";
+import { Product } from "./Product";
 
 
 

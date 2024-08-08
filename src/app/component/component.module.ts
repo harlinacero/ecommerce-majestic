@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsRoutes } from './component.routing';
-import { ProdcutComponent } from './prodcut/prodcut.component';
 import { VideoComponent } from './video/video.component';
 
 @NgModule({
@@ -18,7 +17,7 @@ import { VideoComponent } from './video/video.component';
     VideoComponent
   ],
   declarations: [
-    ProdcutComponent
+
   ],
 })
 export class ComponentsModule { }

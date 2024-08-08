@@ -9,6 +9,8 @@ export interface Product {
   category: Category;
   taxes?: number;
   image?: string;
+  creationAt: Date;
+  updatedAt: Date;
 }
 
 

@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { VideoComponent } from './video/video.component';
-import { ProdcutComponent } from './prodcut/prodcut.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -10,11 +9,11 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'presentation',
 				component: VideoComponent
-			}, 
-			{
-				path: 'product',
-				component: ProdcutComponent
-			}
+			},
+			// {
+			// 	path: 'product',
+			// 	component: ProdcutComponent
+			// }
 		]
 	}
 ];

@@ -1,7 +1,7 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
-  
+
   {
     path: '/home',
     title: 'Inicio',
@@ -27,7 +27,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/product',
+    path: '/products',
     title: 'Productos',
     icon: 'bi bi-patch-check',
     class: '',

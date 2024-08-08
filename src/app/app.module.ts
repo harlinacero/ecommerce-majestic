@@ -40,6 +40,8 @@ import { SpinnerComponent } from './shared/spinner.component';
     NavigationComponent,
     SidebarComponent,
   ],
+  exports: [
+  ],
   providers: [
     {
       provide: LocationStrategy,
